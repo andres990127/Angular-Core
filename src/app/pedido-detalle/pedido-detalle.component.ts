@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PedidoDetalle } from '../models/pedido-detalle';
 
 @Component({
   selector: 'app-pedido-detalle',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pedido-detalle.component.scss']
 })
 export class PedidoDetalleComponent implements OnInit {
-
+  @Input() pedidoDetalle: PedidoDetalle[] = new Array<PedidoDetalle>();
   constructor() { }
 
   ngOnInit() {

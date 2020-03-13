@@ -1,5 +1,7 @@
 <p> Cliente: {{pedido.cliente}} </p>
 <p> Dirección:{{pedido.direccion}}</p>
 
-
-<app-pedido-detalle></app-pedido-detalle>
+<button (click)="agregarProducto()">
+    Agregar Producto
+</button>
+<app-pedido-detalle [pedidoDetalle] = "pedido.pedidoDetalle"></app-pedido-detalle>

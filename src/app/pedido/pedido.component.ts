@@ -13,4 +13,14 @@ export class PedidoComponent implements OnInit {
   ngOnInit() {
   }
 
+  agregarProducto()
+  {
+    this.pedido.pedidoDetalle.push({
+      cantidad: 20,
+      precio: 15,
+      producto: 'Agua',
+      total: 300
+    })
+  }
+
 }
