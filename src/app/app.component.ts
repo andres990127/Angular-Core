@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ejemploCore';
+  @ViewChild('inputNombre', {static: true}) inputNombre: ElementRef;
+
+  mostrar()
+  {
+    console.log(this.inputNombre.nativeElement.value)
+/*     this.inputNombre.nativeElement.style.background = "red" */
+this.inputNombre.nativeElement.focus();
+
+  }
 }
