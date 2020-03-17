@@ -4,4 +4,4 @@
 <button (click)="agregarProducto()">
     Agregar Producto
 </button>
-<app-pedido-detalle [pedidoDetalle] = "pedido.pedidoDetalle"></app-pedido-detalle>
+<app-pedido-detalle [pedidoDetalle] = "pedido.pedidoDetalle" (seEliminoUnProducto)="elHijoEliminoAlgo($event)"></app-pedido-detalle>

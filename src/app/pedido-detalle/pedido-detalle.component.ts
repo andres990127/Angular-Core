@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PedidoDetalle } from '../models/pedido-detalle';
+
 
 @Component({
   selector: 'app-pedido-detalle',
@@ -8,9 +9,14 @@ import { PedidoDetalle } from '../models/pedido-detalle';
 })
 export class PedidoDetalleComponent implements OnInit {
   @Input() pedidoDetalle: PedidoDetalle[] = new Array<PedidoDetalle>();
+  @Output() seEliminoUnProducto = new EventEmitter;
   constructor() { }
 
   ngOnInit() {
   }
 
+  eliminar(posicion: number)
+  {
+    this.seEliminoUnProducto.emit({id: posicion})
+  }
 }
