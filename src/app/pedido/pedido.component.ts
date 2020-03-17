@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../models/pedido';
+import Swal from 'sweetalert2' /* Importo SweetAlert */
+/* Se instala por la terminal con el codigo: npm install sweetalert2  */
 
 @Component({
   selector: 'app-pedido',
@@ -21,12 +23,23 @@ export class PedidoComponent implements OnInit {
       producto: 'Agua',
       total: 300
     })
+    Swal.fire( /* Test SweetAlert */
+      {
+        title: 'Producto agregado',
+        text: 'Se agrego correctamente',
+        icon: 'success'
+      }
+    )
   }
 
   elHijoEliminoAlgo(evento)
   {
     this.pedido.pedidoDetalle.splice(evento.id,1)
-    console.log(evento.id);
+    Swal.fire({ /* Test SweetAlert */
+      title: 'Producto Eliminado',
+      text: 'Se elimino correctamente',
+      icon: 'warning'
+    })
   }
 
 }
